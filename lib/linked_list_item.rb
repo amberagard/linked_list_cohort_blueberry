@@ -18,7 +18,19 @@ class LinkedListItem
   end
 
   def <=>(compare)
-    self.payload <=> compare.payload
+    payload = self.payload
+    compare = compare.payload
+
+    # self.payload.to_s <=> compare.payload.to_s
+
+    if payload.class == compare.class
+      payload <=> compare
+    else
+      importance = [Fixnum, String, Symbol]
+      index1 = importance.index(payload.class)
+      index2 = importance.index(compare.class)
+      index1 <=> index2
+    end
   end
 
   def ===(compare)
