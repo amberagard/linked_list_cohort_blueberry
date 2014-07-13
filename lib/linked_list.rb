@@ -32,18 +32,6 @@ class LinkedList
     get(index) == value
   end
 
-  # def index(value)
-  #   count = 0
-  #   lli = LinkedListItem.new(value)
-  #   current_item = @first_item
-  #   until current_item.nil?
-  #     break if current_item == lli
-  #     count += 1
-  #     current_item = current_item.next_item
-  #   end
-  #   current_item == lli ? count : nil
-  # end
-
   def last
     if size == 0
       nil
